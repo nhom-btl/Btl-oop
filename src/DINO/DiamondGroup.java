@@ -88,6 +88,7 @@ public class DiamondGroup {
     }
     public Diamond getdia(int i){
         return dias.get(i);
+        
     }
     
 }
