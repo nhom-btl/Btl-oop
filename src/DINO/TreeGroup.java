@@ -30,20 +30,19 @@ public class TreeGroup {
     public TreeGroup (){
         
         n=7;
-        ntree = 4;
+        ntree = 3;
         kc2vc = ObstaclesGroup.khoangcach2vatcan;
         imgtree = new BufferedImage[ntree]; 
         try{
             imgtree[0] = ImageIO.read(new File("images/tree.png"));
-            imgtree[1] = ImageIO.read(new File("images/tree1.png"));
-            imgtree[2] = ImageIO.read(new File("images/tree2.png"));
-            imgtree[3] = ImageIO.read(new File("images/tree3.png"));     
+            imgtree[1] = ImageIO.read(new File("images/tree2.png"));
+            imgtree[2] = ImageIO.read(new File("images/tree3.png"));     
         }catch (IOException ex) {}
         trees = new QueueList<Tree>();
         rdimg = new Vector <> ();
         ktimg = new int[ntree][2];
         ktimg[0][0] = 159; ktimg[0][1] =  125;          ktimg[1][0] = 100; ktimg[1][1] = 93 ;
-        ktimg[2][0] = 100; ktimg[2][1] =  90;          ktimg[3][0] = 126; ktimg[3][1] = 117 ;
+        ktimg[2][0] = 100; ktimg[2][1] =  90;         
         for(int i = 0 ;i<n ;i++){  //// 3 khoang 0-> 260 ; 261 -> 521 ; 521 -> 780 
             tmp = generator.nextInt(ntree);            
             rdimg.add(tmp);       
