@@ -65,6 +65,7 @@ public class Obstacles extends Objects{
             Obstacles xr;
             xr = new Obstacles(posvatcanfirst +i*khoangcach2vatcan ,400-ktanh[rdimg.get(i)][1],ktanh[rdimg.get(i)][0],ktanh[rdimg.get(i)][1]);
             xuongrongs.push(xr);   
+            
         }     
     }
    public void update(){
