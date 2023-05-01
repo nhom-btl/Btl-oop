@@ -43,12 +43,10 @@ public class Main extends GameScreen {
     
     public static float gamespeed = (float) 2.0;
     
-    public int point,maxpoint;
-    
+    public int point,maxpoint = 0;   
     private int nvqvc;private boolean night = false;
     
-    Font myFont2 = new Font("Arial", Font.BOLD, 14);
-    
+    Font myFont2 = new Font("Arial", Font.BOLD, 14);   
 // ------------------------------------------------------------------------------------------------------------------------------------------------    
     
     public Main() throws IOException{
@@ -171,15 +169,17 @@ public class Main extends GameScreen {
         diagroup.paint(g2);
         if(CurrentScreen == BEGIN_SCREEN){
             g2.setColor(Color.red);
-            g2.setFont(myFont2);
-            g2.drawString("PRESS SPACE TO PLAY", 150, 50);
-            String pstr = String.valueOf(maxpoint);
-            g2.drawString("Highest score: " + pstr , 150, 30);
+            g2.setFont(new Font("Verdana", Font.PLAIN, 40));
+            g2.drawString("PRESS SPACE TO PLAY", 170, 250);
+            g2.setFont(new Font("Verdana", Font.PLAIN, 30));
+            g2.drawString("Highest score: " + maxpoint , 270, 200);
         }
         if(CurrentScreen == GAMEOVER_SCREEN){
-            g2.setFont(myFont2);
+            g2.setFont(new Font("Verdana", Font.PLAIN, 50));
             g2.setColor(Color.red);
-            g2.drawString("PLAY AGAIN?", 100, 100);
+            g2.drawString("PLAY AGAIN?", 250,250);
+            g2.setFont(new Font("Verdana", Font.PLAIN, 30));
+            g2.drawString("Score: " + point , 350, 200);
         }
         g2.setColor(Color.red);
         g2.setFont(myFont2);
@@ -189,7 +189,7 @@ public class Main extends GameScreen {
         if(point > maxpoint){
             maxpoint = point;
             WriteFile wff = new WriteFile();
-            String pstr = String.valueOf(maxpoint);  
+            String pstr = String.valueOf(maxpoint);
             wff.write(pstr);
         }
     }
@@ -197,6 +197,7 @@ public class Main extends GameScreen {
         dino.setPos(posx, posy);
         dino.setLive(true);
         point = 0;
+        savepoint();
         obstaclesgroup = new ObstaclesGroup();
-    }    
+    }
 }
