@@ -22,7 +22,23 @@ public class CloudGroup {
         }
     }
     private static QueueList<Cloud> clouds ;
+
+public static QueueList<Cloud> getClouds() {
+    return clouds;
+}
+
+public static void setClouds(QueueList<Cloud> clouds) {
+    CloudGroup.clouds = clouds;
+}
+
     private final BufferedImage[] imgmay;
+    public BufferedImage[] getImgmay() {
+        return imgmay;
+    }
+
+    public void setImgmay(BufferedImage[] imgmay) {
+    }
+    
     Random generator = new Random();
     public Vector <Integer> rdimg ;
     public int ktimg[][] ;

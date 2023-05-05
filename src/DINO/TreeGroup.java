@@ -22,7 +22,20 @@ public class TreeGroup {
     }
 }
     private static QueueList<Tree> trees ;
+    public static QueueList<Tree> getTrees() {
+    return trees;
+}
+
+public static void setTrees(QueueList<Tree> trees) {
+    TreeGroup.trees = trees;
+}
     private BufferedImage[] imgtree;
+    public BufferedImage[] getImgtree() {
+        return imgtree;
+    }
+
+    public void setImgtree(BufferedImage[] imgtree) {
+    }
     Random generator = new Random();
     public Vector <Integer> rdimg ;
     public int ktimg[][] ;
@@ -42,12 +55,12 @@ public class TreeGroup {
         rdimg = new Vector <> ();
         ktimg = new int[ntree][2];
         ktimg[0][0] = 159; ktimg[0][1] =  125;          ktimg[1][0] = 100; ktimg[1][1] = 93 ;
-        ktimg[2][0] = 100; ktimg[2][1] =  90;         
+        ktimg[2][0] = 140; ktimg[2][1] =  110;         
         for(int i = 0 ;i<n ;i++){  //// 3 khoang 0-> 260 ; 261 -> 521 ; 521 -> 780 
             tmp = generator.nextInt(ntree);            
             rdimg.add(tmp);       
             Tree tr;
-            tr = new Tree( 260*i - 130 , 400 - ktimg[rdimg.get(i)][1]  ,ktimg[rdimg.get(i)][0],ktimg[rdimg.get(i)][1]);         
+            tr = new Tree( 260*i , 400 - ktimg[rdimg.get(i)][1]  ,ktimg[rdimg.get(i)][0],ktimg[rdimg.get(i)][1]);         
             trees.push(tr);
         }
         
