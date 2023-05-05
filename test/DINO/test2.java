@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author HBC
  */
-public class ReadFileTest {
+public class test2 {
     public ReadFile test;
-    public ReadFileTest() {
+    public test2() {
         test = new ReadFile();
         
     }

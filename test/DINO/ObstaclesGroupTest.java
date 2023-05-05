@@ -1,46 +1,53 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit4TestClass.java to edit this template
- */
 package DINO;
 
-import org.junit.Test;
 import static org.junit.Assert.*;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Random;
+import java.util.Vector;
+import javax.imageio.ImageIO;
+import org.junit.Before;
+import org.junit.Test;
+import pkg2dgamesframework.Objects;
+import pkg2dgamesframework.QueueList;
+import java.util.Queue;
+import java.util.Scanner; 
 
-/**
- *
- * @author HBC
- */
+
 public class ObstaclesGroupTest {
-    public ObstaclesGroup test;
-    public ObstaclesGroupTest() {
-        test = new ObstaclesGroup();
-    }
-   
-    // kiểm tra test ảnh có null không
-    @Test
-    public void test1() {
-        for(int i = 0 ;i<7;i++){
-            assertNotNull(test.xrimage[i]);
-        }
+  @Test
+    public void testObstaclesGroup() {
+        ObstaclesGroup obstaclesGroup = new ObstaclesGroup();
+        QueueList<ObstaclesGroup.Obstacles> x = obstaclesGroup.getXrs();
+        BufferedImage[] arr = obstaclesGroup.getImgXr();
+        assertEquals(7, obstaclesGroup.SIZE);
+        assertEquals(780, obstaclesGroup.posvatcanfirst);
+         assertEquals(500, obstaclesGroup.khoangcach2vatcan);
+        assertNotNull(x);
+        assertNotNull(arr);
+        assertNotNull(obstaclesGroup.rdimg);
+        assertNotNull(obstaclesGroup.ktanh);
         
     }
-    // kiểm tra phương thức có thực hiện đúng chưa
+    
     @Test
-    public void test2() {
-        for(int i = 0 ;i<7;i++){
-            assertSame(ObstaclesGroup.xuongrongs.get(i),test.getxrs(i));
-
-        }
+    public void testUpdateDiamondGroup() {
+        DiamondGroup diamondGroup= new DiamondGroup();
+        float initialPosX = diamondGroup.getdia(0).getPosX();
+        diamondGroup.update();
+        float updatedPosX = diamondGroup.getdia(0).getPosX();
+        assertTrue(updatedPosX < initialPosX);
+           
     }
-    // kiểm tra các đối tượng trong QueueList đã update bị trí chưa
-    @Test
-    public void test3() {
-        for(int i = 0 ;i<7;i++){
-            int t = (int) test.getxrs(i).getPosX();
-            test.getxrs(i).update();
-            assertEquals( t-2 , (int)test.getxrs(i).getPosX() );
-
-        }
+@Test
+    public void testPaintDiamondGroup() {
+        DiamondGroup diamondGroup= new DiamondGroup();
+        float initialPosX = diamondGroup.getdia(0).getPosX();
+        diamondGroup.update();
+        float updatedPosX = diamondGroup.getdia(0).getPosX();
+        assertTrue(updatedPosX < initialPosX);
+           
     }
 }

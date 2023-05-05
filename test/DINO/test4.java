@@ -15,9 +15,9 @@ import pkg2dgamesframework.SoundPlayer;
  *
  * @author HBC
  */
-public class DinosaurTest {
+public class test4 {
     public Dinosaur test;
-    public DinosaurTest() {
+    public test4() {
         test = new Dinosaur(posx,posy,80,80);
     }
     
