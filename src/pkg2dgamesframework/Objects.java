@@ -12,9 +12,25 @@ package pkg2dgamesframework;
 public class Objects {
     
     private float posX, posY;
-    private float w, h;
+    private static float w, h;
     
+    public static float getw()
+    {
+        return w;
+    }
+    public static void setw(float w)
+    {
+        Objects.w = w;
+    }
     
+    public static float geth()
+    {
+        return h;
+    }
+    public static void seth(float h)
+    {
+        Objects.h = h;
+    }
     
     public Objects(float x, float y, float w, float h){
         this.posX = x;
