@@ -34,36 +34,36 @@ public class DiamondGroup {
         this.isvc = t;
     }
 }
-    private static QueueList<Diamond> dias ;
     private  BufferedImage imgdia = null;
     Random generator = new Random();
-    private int n = 10,tmp;
-    private int w,h;
+    public int n = 10,tmp;
+    public int w,h;
     public Diamond t;
+    private static QueueList<Diamond> dias ;
+    public static QueueList<Diamond> getDias() {
+    return dias;
+    }
+    public static void setDias(QueueList<Diamond> dias) {
+        DiamondGroup.dias = dias;
+    }  
+    public BufferedImage getImgdia() {
+        return imgdia;
+    }
+
     public DiamondGroup() {
         
         w = 25;h = 17;
         t = new Diamond(70,20,w,h);
         try{
-            imgdia = ImageIO.read(new File("images/diamond.png")); // 25:17
-
-        }catch (IOException ex) {}
-        
-        dias = new QueueList<>();
-        
-        
+            imgdia = ImageIO.read(new File("images/diamond.png")); // 52:36
+        }catch (IOException ex) {}      
+        dias = new QueueList<Diamond>();
         for(int i = 0 ;i<n ;i++){  
             int k = 400 - h;// random tu 120 -> k
             Diamond dia;
-            tmp =  generator.nextInt(k-120) + 120 ; // 120 -> k : vi tri diamon co the dc an
-            
-            
-            dia = new Diamond( i*260,tmp, w,h  );
-            
-            
+            tmp =  generator.nextInt(k-120) + 120 ; // 120 -> k : vi tri diamon co the dc an                     
+            dia = new Diamond( i*260,tmp, w,h  );         
             dias.push(dia);
-            
-            
         }
     }
     public void update(){
