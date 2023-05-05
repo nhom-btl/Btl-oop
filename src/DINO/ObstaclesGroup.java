@@ -14,57 +14,38 @@ import pkg2dgamesframework.Objects;
 public class ObstaclesGroup {
     
 public class Obstacles extends Objects{
-    
     public Rectangle rect;
-    
     public boolean isbehind = false;
-    
     public Obstacles(int x,int y, int w, int h){
         super(x,y,w,h);
         rect = new Rectangle(x,y,w/2,h);
     }
-    
     public void update(){
         rect.setLocation((int)this.getPosX(), (int)this.getPosY());
         this.setPosX(this.getPosX() - (Main.gamespeed));
     }
-    
     public Rectangle getRect(){
         return rect;
     }
-    
     public void setisbehind(boolean b){
         this.isbehind = b;
     }
     public boolean getisbehind(){
         return this.isbehind;
     }
-    
 }
     
-    private static QueueList<Obstacles> xuongrongs;
-    
-    private BufferedImage[] xrimage = new BufferedImage[7];
-    
+    public static QueueList<Obstacles> xuongrongs;
+    public BufferedImage[] xrimage = new BufferedImage[7];
     public static int khoangcach2vatcan = 500;
-    
-    public static int SIZE = 7;
-    
+    public static int SIZE = 7;    
     public static int posvatcanfirst = 780;
-    
-    Random generator = new Random();
-        
-    
+    Random generator = new Random();    
     public Vector <Integer> rdimg ;  //random image   rdimg.get(i)
-    
     public int ktanh[][] = new int[7][2];
-        
     public int tmp;
-    
     public ObstaclesGroup(){
-        
         try {
-            
             xrimage[0] = ImageIO.read(new File("images/xr.png")); // 64:53
             xrimage[1] = ImageIO.read(new File("images/xr1.png")); // 35:31
             xrimage[2] = ImageIO.read(new File("images/xr2.png")); // 18:35
@@ -73,61 +54,35 @@ public class Obstacles extends Objects{
             xrimage[5] = ImageIO.read(new File("images/xr5.png")); // 34:35
             xrimage[6] = ImageIO.read(new File("images/xr6.png")); // 18:36
         } catch (IOException ex) {}
-        
         xuongrongs = new QueueList<Obstacles>();
-        
         rdimg = new Vector <> ();
-        
-        
         ktanh[0][0] = 28;ktanh[0][1] = 36;ktanh[1][0]= 35;ktanh[1][1]=31;ktanh[2][0] = 18;ktanh[2][1] = 35;
         ktanh[3][0] = 36;ktanh[3][1] = 35;ktanh[4][0] = 35;ktanh[4][1]= 35;ktanh[5][0]= 34;ktanh[5][1] = 35;ktanh[6][0]=18;ktanh[6][1]=36;
-        
-        
         for(int i = 0 ;i<7 ;i++){
             tmp = generator.nextInt(7);
             
             rdimg.add(tmp);
             Obstacles xr;
             xr = new Obstacles(posvatcanfirst +i*khoangcach2vatcan ,400-ktanh[rdimg.get(i)][1],ktanh[rdimg.get(i)][0],ktanh[rdimg.get(i)][1]);
-            xuongrongs.push(xr);
+            xuongrongs.push(xr);   
             
-        }
-        
-        
-        
-        
-            
-        
+        }     
     }
-    
-    
-    public void update(){
-        
+   public void update(){
         for( int i = 0 ; i < 7 ; i++ ){
             getxrs(i).update();
-            
-            
         }
         if(xuongrongs.get(0).getPosX() + ktanh[rdimg.get(0)][0] < 0  ){
-            
-            
-            Obstacles xr; Obstacles temp = xuongrongs.pop();
+            Obstacles xr; 
+            xuongrongs.pop();
             rdimg.remove(0);
             tmp = generator.nextInt(7);
             this.rdimg.add(tmp);
-            
-            
-           
+
             xr = new Obstacles((int) (xuongrongs.get(5).getPosX() + khoangcach2vatcan),(int)(400-ktanh[rdimg.get(6)][1]),ktanh[rdimg.get(6)][0],ktanh[rdimg.get(6)][1]);
             
             xuongrongs.push(xr);
             xuongrongs.get(6).setisbehind(false);
-            
-            // 0 1 2 3 4 5 6 
-            //   3 5 1 3 2 4 0 
-            //     5 1 3 2 4 0 
-            //   1 2 3 4 5 6 
-            
             
         }
         

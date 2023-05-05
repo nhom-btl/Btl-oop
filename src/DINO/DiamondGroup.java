@@ -34,8 +34,8 @@ public class DiamondGroup {
         this.isvc = t;
     }
 }
-    private static QueueList<Diamond> dias ;
-    private  BufferedImage imgdia = null;
+    public static QueueList<Diamond> dias ;
+    public  BufferedImage imgdia = null;
     Random generator = new Random();
     private int n = 10,tmp;
     private int w,h;
@@ -88,6 +88,7 @@ public class DiamondGroup {
     }
     public Diamond getdia(int i){
         return dias.get(i);
+        
     }
     
 }

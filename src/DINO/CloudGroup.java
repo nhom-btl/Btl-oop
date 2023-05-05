@@ -11,23 +11,34 @@ import javax.imageio.ImageIO;
 import pkg2dgamesframework.QueueList;
 import pkg2dgamesframework.Objects;
 
-
-
-
 public class CloudGroup {
-    public class Cloud extends Objects {
-    
-    
-    
-    public Cloud(int x, int y, int w, int h) {
+    public class Cloud extends Objects 
+    {   
+        public Cloud(int x, int y, int w, int h) {
         super(x, y, w, h);
-    }
+        }
     public void update(){
         this.setPosX(this.getPosX() - Main.gamespeed);
+        }
     }
-}
     private static QueueList<Cloud> clouds ;
+
+public static QueueList<Cloud> getClouds() {
+    return clouds;
+}
+
+public static void setClouds(QueueList<Cloud> clouds) {
+    CloudGroup.clouds = clouds;
+}
+
     private final BufferedImage[] imgmay;
+    public BufferedImage[] getImgmay() {
+        return imgmay;
+    }
+
+    public void setImgmay(BufferedImage[] imgmay) {
+    }
+    
     Random generator = new Random();
     public Vector <Integer> rdimg ;
     public int ktimg[][] ;
@@ -89,7 +100,8 @@ public class CloudGroup {
             getcl(i).update();
         }
         if(getcl(0).getPosX() + ktimg[rdimg.get(0)][0]  < 0 ){
-            Cloud cl;Cloud temp = clouds.pop();
+            Cloud cl;
+            clouds.pop();
             rdimg.remove(0);
             tmp = generator.nextInt(ncloud);
             rdimg.add(tmp);
