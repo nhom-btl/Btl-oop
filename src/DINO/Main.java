@@ -193,7 +193,7 @@ public class Main extends GameScreen {
             wff.write(pstr);
         }
     }
-    public void resetGame() {
+    private void resetGame() {
         dino.setPos(posx, posy);
         dino.setLive(true);
         point = 0;
