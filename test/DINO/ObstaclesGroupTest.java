@@ -34,20 +34,20 @@ public class ObstaclesGroupTest {
     }
     
     @Test
-    public void testUpdateDiamondGroup() {
-        DiamondGroup diamondGroup= new DiamondGroup();
-        float initialPosX = diamondGroup.getdia(0).getPosX();
-        diamondGroup.update();
-        float updatedPosX = diamondGroup.getdia(0).getPosX();
+    public void testUpdateObstaclesGroup() {
+        ObstaclesGroup obstaclesGroup= new ObstaclesGroup();
+        float initialPosX = obstaclesGroup.getdia(0).getPosX();
+        obstaclesGroup.update();
+        float updatedPosX = obstaclesGroup.getdia(0).getPosX();
         assertTrue(updatedPosX < initialPosX);
            
     }
 @Test
-    public void testPaintDiamondGroup() {
-        DiamondGroup diamondGroup= new DiamondGroup();
-        float initialPosX = diamondGroup.getdia(0).getPosX();
-        diamondGroup.update();
-        float updatedPosX = diamondGroup.getdia(0).getPosX();
+    public void testPaintObstaclesGroup() {
+        ObstaclesGroup obstaclesGroup= new ObstaclesGroup();
+        float initialPosX = obstaclesGroup.getdia(0).getPosX();
+        obstaclesGroup.update();
+        float updatedPosX = obstaclesGroup.getdia(0).getPosX();
         assertTrue(updatedPosX < initialPosX);
            
     }
@@ -88,20 +88,20 @@ public class ObstaclesGroupTest {
     }
     
     @Test
-    public void testUpdateDiamondGroup() {
-        DiamondGroup diamondGroup= new DiamondGroup();
-        float initialPosX = diamondGroup.getdia(0).getPosX();
-        diamondGroup.update();
-        float updatedPosX = diamondGroup.getdia(0).getPosX();
+    public void testUpdateObstaclesGroup() {
+        ObstaclesGroup obstaclesGroup= new ObstaclesGroup();
+        float initialPosX = obstaclesGroup.getdia(0).getPosX();
+        obstaclesGroup.update();
+        float updatedPosX = obstaclesGroup.getdia(0).getPosX();
         assertTrue(updatedPosX < initialPosX);
            
     }
 @Test
-    public void testPaintDiamondGroup() {
-        DiamondGroup diamondGroup= new DiamondGroup();
-        float initialPosX = diamondGroup.getdia(0).getPosX();
-        diamondGroup.update();
-        float updatedPosX = diamondGroup.getdia(0).getPosX();
+    public void testPaintObstaclesGroup() {
+        ObstaclesGroup obstaclesGroup= new ObstaclesGroup();
+        float initialPosX = obstaclesGroup.getdia(0).getPosX();
+        obstaclesGroup.update();
+        float updatedPosX = obstaclesGroup.getdia(0).getPosX();
         assertTrue(updatedPosX < initialPosX);
            
     }
