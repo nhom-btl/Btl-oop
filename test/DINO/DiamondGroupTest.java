@@ -57,6 +57,7 @@ public class DiamondGroupTest {
 =======
 package DINO;
 
+
 import DINO.DiamondGroup.Diamond;
 import static org.junit.Assert.*;
 import java.awt.Graphics2D;
