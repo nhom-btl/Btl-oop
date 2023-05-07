@@ -34,46 +34,18 @@ public class Obstacles extends Objects{
         return this.isbehind;
     }
 }
-<<<<<<< HEAD
     
-    public static QueueList<Obstacles> xuongrongs;
-    public BufferedImage[] xrimage = new BufferedImage[7];
+    private static QueueList<Obstacles> xuongrongs;
+    private BufferedImage[] xrimage = new BufferedImage[7];
     public static int khoangcach2vatcan = 500;
     public static int SIZE = 7;    
     public static int posvatcanfirst = 780;
-    Random generator = new Random();    
+   Random generator = new Random();    
     public Vector <Integer> rdimg ;  //random image   rdimg.get(i)
     public int ktanh[][] = new int[7][2];
     public int tmp;
     public ObstaclesGroup(){
         try {
-=======
-     
-    private static QueueList<Obstacles> xuongrongs;  
-    public static int khoangcach2vatcan = 500;   
-    public static int SIZE = 7;   
-    public static int posvatcanfirst = 780;    
-    Random generator = new Random();        
-    public Vector <Integer> rdimg ;  //random image   rdimg.get(i)   
-    public int ktanh[][] = new int[7][2];        
-    public int tmp;
-    private BufferedImage[] xrimage = new BufferedImage[7];
-    public static QueueList<Obstacles> getXrs() {
-        return xuongrongs;
-    }
-    public static void setXrs(QueueList<Obstacles> xuongrongs) {
-        ObstaclesGroup.xuongrongs = xuongrongs;
-    }
-    
-    public BufferedImage[] getImgXr() {
-        return xrimage;
-    }
-    public void setImgmay(BufferedImage[] xrimage) {
-    }
-    
-    public ObstaclesGroup(){      
-        try {       
->>>>>>> dd3e03c9256f7661cba47a975b717bfef58d8354
             xrimage[0] = ImageIO.read(new File("images/xr.png")); // 64:53
             xrimage[1] = ImageIO.read(new File("images/xr1.png")); // 35:31
             xrimage[2] = ImageIO.read(new File("images/xr2.png")); // 18:35
@@ -81,38 +53,21 @@ public class Obstacles extends Objects{
             xrimage[4] = ImageIO.read(new File("images/xr4.png")); // 35:35
             xrimage[5] = ImageIO.read(new File("images/xr5.png")); // 34:35
             xrimage[6] = ImageIO.read(new File("images/xr6.png")); // 18:36
-<<<<<<< HEAD
         } catch (IOException ex) {}
         xuongrongs = new QueueList<Obstacles>();
         rdimg = new Vector <> ();
         ktanh[0][0] = 28;ktanh[0][1] = 36;ktanh[1][0]= 35;ktanh[1][1]=31;ktanh[2][0] = 18;ktanh[2][1] = 35;
         ktanh[3][0] = 36;ktanh[3][1] = 35;ktanh[4][0] = 35;ktanh[4][1]= 35;ktanh[5][0]= 34;ktanh[5][1] = 35;ktanh[6][0]=18;ktanh[6][1]=36;
-=======
-        } catch (IOException ex) {}     
-        xuongrongs = new QueueList<Obstacles>();     
-        rdimg = new Vector <> ();
-        ktanh[0][0] = 28;ktanh[0][1] = 36;ktanh[1][0]= 35;ktanh[1][1]=31;ktanh[2][0] = 18;ktanh[2][1] = 35;
-        ktanh[3][0] = 36;ktanh[3][1] = 35;ktanh[4][0] = 35;ktanh[4][1]= 35;ktanh[5][0]= 34;ktanh[5][1] = 35;ktanh[6][0]=18;
-        ktanh[6][1]=36;     
->>>>>>> dd3e03c9256f7661cba47a975b717bfef58d8354
         for(int i = 0 ;i<7 ;i++){
-            tmp = generator.nextInt(7);           
+            tmp = generator.nextInt(7);
+            
             rdimg.add(tmp);
             Obstacles xr;
-<<<<<<< HEAD
             xr = new Obstacles(posvatcanfirst +i*khoangcach2vatcan ,400-ktanh[rdimg.get(i)][1],ktanh[rdimg.get(i)][0],ktanh[rdimg.get(i)][1]);
             xuongrongs.push(xr);   
             
         }     
     }
-=======
-            xr = new Obstacles(posvatcanfirst +i*khoangcach2vatcan ,400-ktanh[rdimg.get(i)][1],ktanh[rdimg.get(i)]
-                    [0],ktanh[rdimg.get(i)][1]);
-            xuongrongs.push(xr);
-   }   
-    }
-    
->>>>>>> dd3e03c9256f7661cba47a975b717bfef58d8354
    public void update(){
         for( int i = 0 ; i < 7 ; i++ ){
             getxrs(i).update();
@@ -128,6 +83,12 @@ public class Obstacles extends Objects{
             
             xuongrongs.push(xr);
             xuongrongs.get(6).setisbehind(false);
+            
+            // 0 1 2 3 4 5 6 
+            //   3 5 1 3 2 4 0 
+            //     5 1 3 2 4 0 
+            //   1 2 3 4 5 6 
+            
             
         }
         

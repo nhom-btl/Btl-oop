@@ -34,41 +34,36 @@ public class DiamondGroup {
         this.isvc = t;
     }
 }
-<<<<<<< HEAD
-    public static QueueList<Diamond> dias ;
-    public  BufferedImage imgdia = null;
-=======
-    private  BufferedImage imgdia = null;
->>>>>>> dd3e03c9256f7661cba47a975b717bfef58d8354
-    Random generator = new Random();
-    public int n = 10,tmp;
-    public int w,h;
-    public Diamond t;
     private static QueueList<Diamond> dias ;
-    public static QueueList<Diamond> getDias() {
-    return dias;
-    }
-    public static void setDias(QueueList<Diamond> dias) {
-        DiamondGroup.dias = dias;
-    }  
-    public BufferedImage getImgdia() {
-        return imgdia;
-    }
-
+    private  BufferedImage imgdia = null;
+    Random generator = new Random();
+    private int n = 10,tmp;
+    private int w,h;
+    public Diamond t;
     public DiamondGroup() {
         
         w = 25;h = 17;
         t = new Diamond(70,20,w,h);
         try{
-            imgdia = ImageIO.read(new File("images/diamond.png")); // 52:36
-        }catch (IOException ex) {}      
-        dias = new QueueList<Diamond>();
+            imgdia = ImageIO.read(new File("images/diamond.png")); // 25:17
+
+        }catch (IOException ex) {}
+        
+        dias = new QueueList<>();
+        
+        
         for(int i = 0 ;i<n ;i++){  
             int k = 400 - h;// random tu 120 -> k
             Diamond dia;
-            tmp =  generator.nextInt(k-120) + 120 ; // 120 -> k : vi tri diamon co the dc an                     
-            dia = new Diamond( i*260,tmp, w,h  );         
+            tmp =  generator.nextInt(k-120) + 120 ; // 120 -> k : vi tri diamon co the dc an
+            
+            
+            dia = new Diamond( i*260,tmp, w,h  );
+            
+            
             dias.push(dia);
+            
+            
         }
     }
     public void update(){
