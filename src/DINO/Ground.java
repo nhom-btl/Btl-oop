@@ -18,3 +18,4 @@ public class Ground extends Background{
         y2 = y1;
     }
 }
+// tuong tu nhu sky
