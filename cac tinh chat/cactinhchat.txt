@@ -1,4 +1,0 @@
-trừu tượng : GameScreen.java
-đa hình: Background Ground Sky
-đóng gói : private
-kế thừa: extends

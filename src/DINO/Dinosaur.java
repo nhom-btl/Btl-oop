@@ -17,9 +17,9 @@ public class Dinosaur extends Objects {   // 90:100
     
     public int nhaycao = 200;
     
-    public boolean isJumping = false;
+    private boolean isJumping = false;
     
-    public boolean isdrop = false;
+    private boolean isdrop = false;
     
     private final Rectangle rect;
     
