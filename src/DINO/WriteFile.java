@@ -4,10 +4,7 @@ package DINO;
 import java.io.FileWriter;
 import java.io.IOException;
 
-/**
- *
- * @author user
- */
+
 public class WriteFile {
     public void write(String data){
         try {
