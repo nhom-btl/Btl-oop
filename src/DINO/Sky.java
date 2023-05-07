@@ -22,3 +22,4 @@ public class Sky extends Background{  //sky mr tư bgr
         // tọa độ được sử dụng để vẽ hình nền trong trò chơi
     }  
 }
+// oop: ke thua thu bgr, imbgr doc tu night trong image( tc dong goi-chi sd trong sky). da hinh( ktao sky ghi de len bgr)
